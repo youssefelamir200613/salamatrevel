@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="سلامة ترافيل - رحلات داخلية وخارجية وحجز فنادق وعروض خاصة">
+  <title>سلامة ترافيل</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand" id="title">🌍 سلامة ترافيل - رحلاتك معانا أسهل</div>
+    <select class="lang-select" id="langSelect" aria-label="اختر اللغة">
+      <option value="ar">🇪🇬 العربية</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="ru">🇷🇺 Русский</option>
+    </select>
+  </header>
+
+  <nav class="main-nav">
+    <a href="#home" id="nav-home">الرئيسية</a>
+    <a href="#services" id="nav-services">خدماتنا</a>
+    <a href="#booking" id="nav-booking">الحجز</a>
+    <a href="#contact" id="nav-contact">تواصل معنا</a>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">اكتشف العالم معانا</p>
+        <h1>رحلتك الجاية تبدأ من هنا</h1>
+        <p>خطط لرحلتك بسهولة، واختار من الرحلات الداخلية والخارجية وحجوزات الفنادق.</p>
+        <a class="hero-button" href="#booking">احجز رحلتك</a>
+      </div>
+      <img src="images/travel-hero.svg" alt="رسم توضيحي لطائرة وجبال وشمس" class="hero-image">
+    </section>
+
+    <section class="section-heading" id="services">
+      <p class="eyebrow">خدماتنا</p>
+      <h2>كل اللي تحتاجه لرحلة مميزة</h2>
+    </section>
+
+    <section class="services">
+      <article class="service">
+        <img src="images/plane.svg" alt="" class="service-icon">
+        <h3 id="service1">✈️ رحلات خارجية</h3>
+        <p>اكتشف وجهات جديدة وخطط لرحلتك القادمة.</p>
+      </article>
+      <article class="service">
+        <img src="images/bus.svg" alt="" class="service-icon">
+        <h3 id="service2">🚌 رحلات داخلية</h3>
+        <p>استمتع بأجمل الأماكن والرحلات داخل مصر.</p>
+      </article>
+      <article class="service">
+        <img src="images/hotel.svg" alt="" class="service-icon">
+        <h3 id="service3">🏨 حجز فنادق</h3>
+        <p>اكتب تفاصيل إقامتك وسنساعدك في اختيار الأنسب.</p>
+      </article>
+      <article class="service">
+        <img src="images/deal.svg" alt="" class="service-icon">
+        <h3 id="service4">🔥 عروض خاصة</h3>
+        <p>تابع العروض المتاحة وخيارات السفر المختلفة.</p>
+      </article>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <form id="bookingForm" class="booking-form">
+        <p class="eyebrow">خلينا نخطط سوا</p>
+        <h2 id="form-title">احجز رحلتك الآن</h2>
+        <label class="sr-only" for="name">الاسم بالكامل</label>
+        <input type="text" id="name" placeholder="الاسم بالكامل" required>
+        <label class="sr-only" for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+        <label class="sr-only" for="phone">رقم الهاتف</label>
+        <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+        <label class="sr-only" for="details">تفاصيل الرحلة المطلوبة</label>
+        <textarea id="details" placeholder="تفاصيل الرحلة المطلوبة" rows="4"></textarea>
+        <button type="submit" id="submitBtn">إرسال</button>
+        <p class="form-note">ملاحظة: النموذج تجريبي، ولن يرسل البيانات إلى بريد إلكتروني قبل ربطه بخدمة استقبال نماذج.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <p id="footer">📞 0100000000 | ✉️ info@salamatravel.com<br>© 2026 سلامة ترافيل - جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    const translations = {
+      ar: {
+        title: "🌍 سلامة ترافيل - رحلاتك معانا أسهل",
+        home: "الرئيسية", services: "خدماتنا", booking: "الحجز", contact: "تواصل معنا",
+        service1: "✈️ رحلات خارجية", service2: "🚌 رحلات داخلية",
+        service3: "🏨 حجز فنادق", service4: "🔥 عروض خاصة",
+        formTitle: "احجز رحلتك الآن", name: "الاسم بالكامل",
+        email: "البريد الإلكتروني", phone: "رقم الهاتف",
+        details: "تفاصيل الرحلة المطلوبة", submit: "إرسال",
+        footer: "📞 0100000000 | ✉️ info@salamatravel.com<br>© 2026 سلامة ترافيل - جميع الحقوق محفوظة"
+      },
+      de: {
+        title: "🌍 Salama Travel - Reisen leicht gemacht",
+        home: "Startseite", services: "Unsere Services", booking: "Buchung", contact: "Kontakt",
+        service1: "✈️ Auslandsreisen", service2: "🚌 Inlandsreisen",
+        service3: "🏨 Hotelbuchungen", service4: "🔥 Sonderangebote",
+        formTitle: "Jetzt Ihre Reise buchen", name: "Vollständiger Name",
+        email: "E-Mail-Adresse", phone: "Telefonnummer",
+        details: "Reisedetails", submit: "Absenden",
+        footer: "📞 0100000000 | ✉️ info@salamatravel.com<br>© 2026 Salama Travel - Alle Rechte vorbehalten"
+      },
+      ru: {
+        title: "🌍 Салама Трэвел — путешествовать проще",
+        home: "Главная", services: "Услуги", booking: "Бронирование", contact: "Контакты",
+        service1: "✈️ Зарубежные поездки", service2: "🚌 Поездки по стране",
+        service3: "🏨 Бронирование отелей", service4: "🔥 Специальные предложения",
+        formTitle: "Забронируйте поездку", name: "Полное имя",
+        email: "Электронная почта", phone: "Номер телефона",
+        details: "Детали поездки", submit: "Отправить",
+        footer: "📞 0100000000 | ✉️ info@salamatravel.com<br>© 2026 Салама Трэвел — Все права защищены"
+      }
+    };
+
+    const langSelect = document.getElementById("langSelect");
+
+    function setLanguage(lang) {
+      const t = translations[lang] || translations.ar;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("nav-home").textContent = t.home;
+      document.getElementById("nav-services").textContent = t.services;
+      document.getElementById("nav-booking").textContent = t.booking;
+      document.getElementById("nav-contact").textContent = t.contact;
+      ["service1", "service2", "service3", "service4"].forEach(id => {
+        document.getElementById(id).textContent = t[id];
+      });
+      document.getElementById("form-title").textContent = t.formTitle;
+      document.getElementById("name").placeholder = t.name;
+      document.getElementById("email").placeholder = t.email;
+      document.getElementById("phone").placeholder = t.phone;
+      document.getElementById("details").placeholder = t.details;
+      document.getElementById("submitBtn").textContent = t.submit;
+      document.getElementById("footer").innerHTML = t.footer;
+    }
+
+    langSelect.addEventListener("change", e => setLanguage(e.target.value));
+    setLanguage("ar");
+
+    document.getElementById("bookingForm").addEventListener("submit", event => {
+      event.preventDefault();
+      alert(langSelect.value === "de"
+        ? "Vielen Dank! Das Demo-Formular wurde ausgefüllt. Es wurde noch keine E-Mail gesendet."
+        : langSelect.value === "ru"
+        ? "Спасибо! Демо-форма заполнена. Электронное письмо пока не отправлено."
+        : "✅ تم ملء نموذج الحجز التجريبي. لم يتم إرسال البيانات إلى بريد إلكتروني.");
+    });
+  </script>
+</body>
+</html>
