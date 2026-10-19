@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,9 +8,15 @@
   <title>سلامة ترافيل</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+  <!-- Header -->
   <header class="site-header">
-    <div class="brand" id="title">🌍 سلامة ترافيل - رحلاتك معانا أسهل</div>
+    <div class="brand" id="title">
+      🌍 سلامة ترافيل - رحلاتك معانا أسهل
+    </div>
+
     <select class="lang-select" id="langSelect" aria-label="اختر اللغة">
       <option value="ar">🇪🇬 العربية</option>
       <option value="de">🇩🇪 Deutsch</option>
@@ -17,6 +24,7 @@
     </select>
   </header>
 
+  <!-- Navigation -->
   <nav class="main-nav">
     <a href="#home" id="nav-home">الرئيسية</a>
     <a href="#services" id="nav-services">خدماتنا</a>
@@ -25,97 +33,369 @@
   </nav>
 
   <main id="home">
+
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
-        <p class="eyebrow">اكتشف العالم معانا</p>
-        <h1>رحلتك الجاية تبدأ من هنا</h1>
-        <p>خطط لرحلتك بسهولة، واختار من الرحلات الداخلية والخارجية وحجوزات الفنادق.</p>
-        <a class="hero-button" href="#booking">احجز رحلتك</a>
+        <p class="eyebrow" id="hero-eyebrow">اكتشف العالم معانا</p>
+        <h1 id="hero-title">رحلتك الجاية تبدأ من هنا</h1>
+        <p id="hero-description">
+          خطط لرحلتك بسهولة، واختار من الرحلات الداخلية والخارجية وحجوزات الفنادق.
+        </p>
+        <a class="hero-button" href="#booking" id="hero-button">
+          احجز رحلتك
+        </a>
       </div>
-      <img src="images/travel-hero.svg" alt="رسم توضيحي لطائرة وجبال وشمس" class="hero-image">
+
+      <img
+        src="images/travel-hero.svg"
+        alt="رسم توضيحي لطائرة وجبال وشمس"
+        class="hero-image"
+      >
     </section>
 
+    <!-- Services heading -->
     <section class="section-heading" id="services">
-      <p class="eyebrow">خدماتنا</p>
-      <h2>كل اللي تحتاجه لرحلة مميزة</h2>
+      <p class="eyebrow" id="services-eyebrow">خدماتنا</p>
+      <h2 id="services-title">كل اللي تحتاجه لرحلة مميزة</h2>
     </section>
 
+    <!-- Services -->
     <section class="services">
+
       <article class="service">
         <img src="images/plane.svg" alt="" class="service-icon">
         <h3 id="service1">✈️ رحلات خارجية</h3>
-        <p>اكتشف وجهات جديدة وخطط لرحلتك القادمة.</p>
+        <p id="service1-description">
+          اكتشف وجهات جديدة وخطط لرحلتك القادمة.
+        </p>
       </article>
+
       <article class="service">
         <img src="images/bus.svg" alt="" class="service-icon">
         <h3 id="service2">🚌 رحلات داخلية</h3>
-        <p>استمتع بأجمل الأماكن والرحلات داخل مصر.</p>
+        <p id="service2-description">
+          استمتع بأجمل الأماكن والرحلات داخل مصر.
+        </p>
       </article>
+
       <article class="service">
         <img src="images/hotel.svg" alt="" class="service-icon">
         <h3 id="service3">🏨 حجز فنادق</h3>
-        <p>اكتب تفاصيل إقامتك وسنساعدك في اختيار الأنسب.</p>
+        <p id="service3-description">
+          سنساعدك في اختيار الإقامة المناسبة.
+        </p>
       </article>
+
       <article class="service">
         <img src="images/deal.svg" alt="" class="service-icon">
         <h3 id="service4">🔥 عروض خاصة</h3>
-        <p>تابع العروض المتاحة وخيارات السفر المختلفة.</p>
+        <p id="service4-description">
+          اكتشف العروض وخيارات السفر المختلفة.
+        </p>
       </article>
+
     </section>
 
+    <!-- Booking Form -->
     <section class="booking-section" id="booking">
-      <form id="bookingForm" class="booking-form">
-        <p class="eyebrow">خلينا نخطط سوا</p>
+      <form
+        id="bookingForm"
+        class="booking-form"
+        action="https://formspree.io/f/xgaoqbly"
+        method="POST"
+      >
+        <p class="eyebrow" id="booking-eyebrow">خلينا نخطط سوا</p>
         <h2 id="form-title">احجز رحلتك الآن</h2>
-        <label class="sr-only" for="name">الاسم بالكامل</label>
-        <input type="text" id="name" placeholder="الاسم بالكامل" required>
-        <label class="sr-only" for="email">البريد الإلكتروني</label>
-        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
-        <label class="sr-only" for="phone">رقم الهاتف</label>
-        <input type="tel" id="phone" placeholder="رقم الهاتف" required>
-        <label class="sr-only" for="details">تفاصيل الرحلة المطلوبة</label>
-        <textarea id="details" placeholder="تفاصيل الرحلة المطلوبة" rows="4"></textarea>
-        <button type="submit" id="submitBtn">إرسال</button>
-        <p class="form-note">ملاحظة: النموذج تجريبي، ولن يرسل البيانات إلى بريد إلكتروني قبل ربطه بخدمة استقبال نماذج.</p>
+
+        <label for="booking-name" id="booking-name-label">
+          الاسم بالكامل
+        </label>
+        <input
+          type="text"
+          id="booking-name"
+          name="name"
+          placeholder="الاسم بالكامل"
+          autocomplete="name"
+          required
+        >
+
+        <label for="booking-email" id="booking-email-label">
+          البريد الإلكتروني
+        </label>
+        <input
+          type="email"
+          id="booking-email"
+          name="email"
+          placeholder="البريد الإلكتروني"
+          autocomplete="email"
+          required
+        >
+
+        <label for="booking-phone" id="booking-phone-label">
+          رقم الهاتف
+        </label>
+        <input
+          type="tel"
+          id="booking-phone"
+          name="phone"
+          placeholder="رقم الهاتف"
+          autocomplete="tel"
+          required
+        >
+
+        <label for="booking-details" id="booking-details-label">
+          تفاصيل الرحلة المطلوبة
+        </label>
+        <textarea
+          id="booking-details"
+          name="details"
+          placeholder="الوجهة، موعد السفر، عدد المسافرين..."
+          rows="4"
+          required
+        ></textarea>
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="طلب حجز جديد - سلامة ترافيل"
+        >
+
+        <button type="submit" id="submitBtn">إرسال طلب الحجز</button>
       </form>
     </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <h2 id="contact-title">تواصل مع سلامة ترافيل</h2>
+
+      <p id="contact-description">
+        عندك استفسار عن رحلة؟ ابعتلنا رسالتك!
+      </p>
+
+      <form
+        id="contactForm"
+        class="contact-form"
+        action="https://formspree.io/f/xgaoqbly"
+        method="POST"
+      >
+        <label for="contact-name" id="contact-name-label">
+          الاسم بالكامل
+        </label>
+        <input
+          type="text"
+          id="contact-name"
+          name="name"
+          placeholder="اكتب اسمك"
+          autocomplete="name"
+          required
+        >
+
+        <label for="contact-email" id="contact-email-label">
+          البريد الإلكتروني
+        </label>
+        <input
+          type="email"
+          id="contact-email"
+          name="email"
+          placeholder="example@gmail.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="contact-subject" id="contact-subject-label">
+          موضوع الرسالة
+        </label>
+        <input
+          type="text"
+          id="contact-subject"
+          name="message_subject"
+          placeholder="استفسار عن رحلة"
+          required
+        >
+
+        <label for="contact-message" id="contact-message-label">
+          رسالتك
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          rows="5"
+          placeholder="اكتب رسالتك هنا..."
+          required
+        ></textarea>
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="رسالة جديدة من موقع سلامة ترافيل"
+        >
+
+        <button type="submit" id="contact-submit">
+          إرسال الرسالة
+        </button>
+      </form>
+    </section>
+
   </main>
 
-  <footer id="contact" class="site-footer">
-    <p id="footer">📞 01030033154 | ✉️ youssefelamir439@gmail.com<br>© 2026 سلامة ترافيل - جميع الحقوق محفوظة</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p id="footer">
+      📞 01030033154 |
+      ✉️ youssefelamir439@gmail.com
+      <br>
+      © 2026 سلامة ترافيل - جميع الحقوق محفوظة
+    </p>
   </footer>
 
   <script>
     const translations = {
       ar: {
         title: "🌍 سلامة ترافيل - رحلاتك معانا أسهل",
-        home: "الرئيسية", services: "خدماتنا", booking: "الحجز", contact: "تواصل معنا",
-        service1: "✈️ رحلات خارجية", service2: "🚌 رحلات داخلية",
-        service3: "🏨 حجز فنادق", service4: "🔥 عروض خاصة",
-        formTitle: "احجز رحلتك الآن", name: "الاسم بالكامل",
-        email: "البريد الإلكتروني", phone: "رقم الهاتف",
-        details: "تفاصيل الرحلة المطلوبة", submit: "إرسال",
-        footer: "📞 01030033154 | ✉️ youssefelamir439@gmail.com<br>© 2026 سلامة ترافيل - جميع الحقوق محفوظة"
+        home: "الرئيسية",
+        services: "خدماتنا",
+        booking: "الحجز",
+        contact: "تواصل معنا",
+
+        heroEyebrow: "اكتشف العالم معانا",
+        heroTitle: "رحلتك الجاية تبدأ من هنا",
+        heroDescription:
+          "خطط لرحلتك بسهولة، واختار من الرحلات الداخلية والخارجية وحجوزات الفنادق.",
+        heroButton: "احجز رحلتك",
+
+        servicesEyebrow: "خدماتنا",
+        servicesTitle: "كل اللي تحتاجه لرحلة مميزة",
+
+        service1: "✈️ رحلات خارجية",
+        service1Description: "اكتشف وجهات جديدة وخطط لرحلتك القادمة.",
+        service2: "🚌 رحلات داخلية",
+        service2Description: "استمتع بأجمل الأماكن والرحلات داخل مصر.",
+        service3: "🏨 حجز فنادق",
+        service3Description: "سنساعدك في اختيار الإقامة المناسبة.",
+        service4: "🔥 عروض خاصة",
+        service4Description: "اكتشف العروض وخيارات السفر المختلفة.",
+
+        bookingEyebrow: "خلينا نخطط سوا",
+        formTitle: "احجز رحلتك الآن",
+        name: "الاسم بالكامل",
+        email: "البريد الإلكتروني",
+        phone: "رقم الهاتف",
+        details: "الوجهة، موعد السفر، عدد المسافرين...",
+        submit: "إرسال طلب الحجز",
+
+        contactTitle: "تواصل مع سلامة ترافيل",
+        contactDescription: "عندك استفسار عن رحلة؟ ابعتلنا رسالتك!",
+        contactName: "الاسم بالكامل",
+        contactEmail: "البريد الإلكتروني",
+        subject: "موضوع الرسالة",
+        message: "رسالتك",
+        contactNamePlaceholder: "اكتب اسمك",
+        contactEmailPlaceholder: "example@gmail.com",
+        subjectPlaceholder: "استفسار عن رحلة",
+        messagePlaceholder: "اكتب رسالتك هنا...",
+        contactSubmit: "إرسال الرسالة",
+
+        footer:
+          "📞 01030033154 | ✉️ youssefelamir439@gmail.com\n© 2026 سلامة ترافيل - جميع الحقوق محفوظة"
       },
+
       de: {
         title: "🌍 Salama Travel - Reisen leicht gemacht",
-        home: "Startseite", services: "Unsere Services", booking: "Buchung", contact: "Kontakt",
-        service1: "✈️ Auslandsreisen", service2: "🚌 Inlandsreisen",
-        service3: "🏨 Hotelbuchungen", service4: "🔥 Sonderangebote",
-        formTitle: "Jetzt Ihre Reise buchen", name: "Vollständiger Name",
-        email: "E-Mail-Adresse", phone: "Telefonnummer",
-        details: "Reisedetails", submit: "Absenden",
-        footer: "📞 01030033154 | ✉️ youssefelamir439@gmail.com<br>© 2026 Salama Travel - Alle Rechte vorbehalten"
+        home: "Startseite",
+        services: "Unsere Services",
+        booking: "Buchung",
+        contact: "Kontakt",
+
+        heroEyebrow: "Entdecke die Welt mit uns",
+        heroTitle: "Deine nächste Reise beginnt hier",
+        heroDescription:
+          "Plane deine Reise einfach: Entdecke Auslandsreisen, Inlandsreisen und Hotelbuchungen.",
+        heroButton: "Reise buchen",
+
+        servicesEyebrow: "Unsere Services",
+        servicesTitle: "Alles für eine besondere Reise",
+
+        service1: "✈️ Auslandsreisen",
+        service1Description: "Entdecke neue Reiseziele.",
+        service2: "🚌 Inlandsreisen",
+        service2Description: "Entdecke die schönsten Orte in Ägypten.",
+        service3: "🏨 Hotelbuchungen",
+        service3Description: "Wir helfen dir, die passende Unterkunft zu finden.",
+        service4: "🔥 Sonderangebote",
+        service4Description: "Entdecke unsere Reiseangebote.",
+
+        bookingEyebrow: "Planen wir gemeinsam",
+        formTitle: "Jetzt deine Reise buchen",
+        name: "Vollständiger Name",
+        email: "E-Mail-Adresse",
+        phone: "Telefonnummer",
+        details: "Reiseziel, Reisedatum und Anzahl der Reisenden...",
+        submit: "Buchungsanfrage senden",
+
+        contactTitle: "Kontaktiere Salama Travel",
+        contactDescription: "Hast du eine Frage? Schreib uns!",
+        contactName: "Vollständiger Name",
+        contactEmail: "E-Mail-Adresse",
+        subject: "Betreff",
+        message: "Deine Nachricht",
+        contactNamePlaceholder: "Deinen Namen eingeben",
+        contactEmailPlaceholder: "example@gmail.com",
+        subjectPlaceholder: "Frage zu einer Reise",
+        messagePlaceholder: "Schreibe deine Nachricht...",
+        contactSubmit: "Nachricht senden",
+
+        footer:
+          "📞 01030033154 | ✉️ youssefelamir439@gmail.com\n© 2026 Salama Travel - Alle Rechte vorbehalten"
       },
+
       ru: {
         title: "🌍 Салама Трэвел — путешествовать проще",
-        home: "Главная", services: "Услуги", booking: "Бронирование", contact: "Контакты",
-        service1: "✈️ Зарубежные поездки", service2: "🚌 Поездки по стране",
-        service3: "🏨 Бронирование отелей", service4: "🔥 Специальные предложения",
-        formTitle: "Забронируйте поездку", name: "Полное имя",
-        email: "Электронная почта", phone: "Номер телефона",
-        details: "Детали поездки", submit: "Отправить",
-        footer: "📞 01030033154 | ✉️ youssefelamir439@gmail.com<br>© 2026 Салама Трэвел — Все права защищены"
+        home: "Главная",
+        services: "Услуги",
+        booking: "Бронирование",
+        contact: "Контакты",
+
+        heroEyebrow: "Откройте мир вместе с нами",
+        heroTitle: "Ваше следующее путешествие начинается здесь",
+        heroDescription:
+          "Планируйте поездки, выбирайте путешествия по Египту и за границу, бронируйте отели.",
+        heroButton: "Забронировать поездку",
+
+        servicesEyebrow: "Наши услуги",
+        servicesTitle: "Всё для особенного путешествия",
+
+        service1: "✈️ Зарубежные поездки",
+        service1Description: "Откройте для себя новые направления.",
+        service2: "🚌 Поездки по Египту",
+        service2Description: "Посетите красивые места Египта.",
+        service3: "🏨 Бронирование отелей",
+        service3Description: "Поможем выбрать подходящий отель.",
+        service4: "🔥 Специальные предложения",
+        service4Description: "Откройте для себя наши предложения.",
+
+        bookingEyebrow: "Спланируем поездку вместе",
+        formTitle: "Забронируйте поездку",
+        name: "Полное имя",
+        email: "Электронная почта",
+        phone: "Номер телефона",
+        details: "Направление, даты и количество путешественников...",
+        submit: "Отправить заявку",
+
+        contactTitle: "Свяжитесь с Salama Travel",
+        contactDescription: "Есть вопросы? Напишите нам!",
+        contactName: "Полное имя",
+        contactEmail: "Электронная почта",
+        subject: "Тема сообщения",
+        message: "Ваше сообщение",
+        contactNamePlaceholder: "Введите ваше имя",
+        contactEmailPlaceholder: "example@gmail.com",
+        subjectPlaceholder: "Вопрос о поездке",
+        messagePlaceholder: "Напишите ваше сообщение...",
+        contactSubmit: "Отправить сообщение",
+
+        footer:
+          "📞 01030033154 | ✉️ youssefelamir439@gmail.com\n© 2026 Салама Трэвел — Все права защищены"
       }
     };
 
@@ -123,35 +403,84 @@
 
     function setLanguage(lang) {
       const t = translations[lang] || translations.ar;
+
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-      document.getElementById("title").textContent = t.title;
-      document.getElementById("nav-home").textContent = t.home;
-      document.getElementById("nav-services").textContent = t.services;
-      document.getElementById("nav-booking").textContent = t.booking;
-      document.getElementById("nav-contact").textContent = t.contact;
+
+      const setText = (id, value) => {
+        document.getElementById(id).textContent = value;
+      };
+
+      setText("title", t.title);
+      setText("nav-home", t.home);
+      setText("nav-services", t.services);
+      setText("nav-booking", t.booking);
+      setText("nav-contact", t.contact);
+
+      setText("hero-eyebrow", t.heroEyebrow);
+      setText("hero-title", t.heroTitle);
+      setText("hero-description", t.heroDescription);
+      setText("hero-button", t.heroButton);
+
+      setText("services-eyebrow", t.servicesEyebrow);
+      setText("services-title", t.servicesTitle);
+
       ["service1", "service2", "service3", "service4"].forEach(id => {
-        document.getElementById(id).textContent = t[id];
+        setText(id, t[id]);
+        setText(id + "-description", t[id + "Description"]);
       });
-      document.getElementById("form-title").textContent = t.formTitle;
-      document.getElementById("name").placeholder = t.name;
-      document.getElementById("email").placeholder = t.email;
-      document.getElementById("phone").placeholder = t.phone;
-      document.getElementById("details").placeholder = t.details;
-      document.getElementById("submitBtn").textContent = t.submit;
-      document.getElementById("footer").innerHTML = t.footer;
+
+      setText("booking-eyebrow", t.bookingEyebrow);
+      setText("form-title", t.formTitle);
+
+      setText("booking-name-label", t.name);
+      setText("booking-email-label", t.email);
+      setText("booking-phone-label", t.phone);
+      setText("booking-details-label", t.details);
+
+      document.getElementById("booking-name").placeholder = t.name;
+      document.getElementById("booking-email").placeholder = t.email;
+      document.getElementById("booking-phone").placeholder = t.phone;
+      document.getElementById("booking-details").placeholder = t.details;
+
+      setText("submitBtn", t.submit);
+
+      setText("contact-title", t.contactTitle);
+      setText("contact-description", t.contactDescription);
+      setText("contact-name-label", t.contactName);
+      setText("contact-email-label", t.contactEmail);
+      setText("contact-subject-label", t.subject);
+      setText("contact-message-label", t.message);
+
+      document.getElementById("contact-name").placeholder =
+        t.contactNamePlaceholder;
+      document.getElementById("contact-email").placeholder =
+        t.contactEmailPlaceholder;
+      document.getElementById("contact-subject").placeholder =
+        t.subjectPlaceholder;
+      document.getElementById("contact-message").placeholder =
+        t.messagePlaceholder;
+
+      setText("contact-submit", t.contactSubmit);
+
+      // Keep the footer line break while translating.
+      document.getElementById("footer").replaceChildren();
+
+      const footerText = t.footer.split("\n");
+      document.getElementById("footer").append(
+        document.createTextNode(footerText[0]),
+        document.createElement("br"),
+        document.createTextNode(footerText[1])
+      );
     }
 
-    langSelect.addEventListener("change", e => setLanguage(e.target.value));
-    setLanguage("ar");
-
-    document.getElementById("bookingForm").addEventListener("submit", event => {
-      event.preventDefault();
-      alert(langSelect.value === "de"
-        ? "Vielen Dank! Das Demo-Formular wurde ausgefüllt. Es wurde noch keine E-Mail gesendet."
-        : langSelect.value === "ru"
-        ? "Спасибо! Демо-форма заполнена. Электронное письмо пока не отправлено.ملء نموذج الحجز التجريبي. لم يتم إرسال البيانات إلى بريد إلكتروني.");
+    langSelect.addEventListener("change", event => {
+      setLanguage(event.target.value);
     });
+
+    setLanguage("ar");
   </script>
+
 </body>
 </html>
+```
