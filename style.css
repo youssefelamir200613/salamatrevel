@@ -1,5 +1,9 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
 
+/* =========================
+   1. الألوان والإعدادات العامة
+========================= */
 :root {
   --blue: #0077b6;
   --deep-blue: #023e8a;
@@ -8,18 +12,44 @@
   --text: #183044;
   --muted: #617485;
   --white: #ffffff;
+  --card: #ffffff;
+  --border: #e1edf5;
+  --section-bg: #e8f6fc;
   --shadow: 0 12px 32px rgba(2, 62, 138, .10);
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
 body {
   margin: 0;
   font-family: "Cairo", Tahoma, Arial, sans-serif;
   background: var(--light);
   color: var(--text);
   line-height: 1.8;
+  transition: background .3s, color .3s;
 }
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* =========================
+   2. رأس الموقع
+========================= */
 .site-header {
   position: relative;
   display: flex;
@@ -31,7 +61,12 @@ body {
   text-align: center;
   background: linear-gradient(120deg, var(--deep-blue), var(--blue));
 }
-.brand { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 800; }
+
+.brand {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 800;
+}
+
 .lang-select {
   position: absolute;
   inset-inline-start: 22px;
@@ -45,6 +80,30 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
+
+/* زر الوضع الداكن إذا أضفته في HTML */
+.theme-toggle {
+  position: absolute;
+  inset-inline-end: 22px;
+  top: 25px;
+  padding: 9px 13px;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 10px;
+  background: rgba(255,255,255,.15);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .3s, transform .3s;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,.28);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   3. شريط التنقل
+========================= */
 .main-nav {
   display: flex;
   justify-content: center;
@@ -53,6 +112,7 @@ body {
   padding: 5px 12px;
   background: var(--deep-blue);
 }
+
 .main-nav a {
   color: white;
   text-decoration: none;
@@ -61,7 +121,15 @@ body {
   font-weight: 700;
   transition: background .2s, transform .2s;
 }
-.main-nav a:hover { background: var(--blue); transform: translateY(-1px); }
+
+.main-nav a:hover {
+  background: var(--blue);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   4. الواجهة الرئيسية
+========================= */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -72,11 +140,38 @@ body {
   margin: 30px auto 0;
   padding: 35px 28px;
 }
-.hero-content { max-width: 560px; }
-.eyebrow { margin: 0 0 8px; color: var(--blue); font-weight: 800; }
-.hero h1 { margin: 0 0 14px; color: var(--deep-blue); font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.35; }
-.hero-content > p:not(.eyebrow) { color: var(--muted); font-size: 1.08rem; }
-.hero-image { display: block; width: 100%; max-height: 350px; }
+
+.hero-content {
+  max-width: 560px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.hero h1 {
+  margin: 0 0 14px;
+  color: var(--deep-blue);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.35;
+}
+
+.hero-content > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
 .hero-button {
   display: inline-block;
   margin-top: 12px;
@@ -87,10 +182,42 @@ body {
   font-weight: 800;
   text-decoration: none;
   box-shadow: var(--shadow);
+  transition: background .25s, transform .25s;
 }
-.hero-button:hover { background: var(--deep-blue); }
-.section-heading { padding: 25px 20px 0; text-align: center; }
-.section-heading h2 { margin: 0; color: var(--deep-blue); font-size: clamp(1.5rem, 3vw, 2rem); }
+
+.hero-button:hover {
+  background: var(--deep-blue);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   5. عناوين الأقسام
+========================= */
+.section-heading {
+  padding: 35px 20px 0;
+  text-align: center;
+}
+
+.section-heading span {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--deep-blue);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.section-heading p {
+  color: var(--muted);
+  margin: 8px auto 0;
+  max-width: 700px;
+}
+
+/* =========================
+   6. كروت الخدمات
+========================= */
 .services {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -99,43 +226,233 @@ body {
   margin: 22px auto 50px;
   padding: 15px 24px;
 }
+
 .service {
   padding: 25px 18px;
   text-align: center;
-  background: var(--white);
-  border: 1px solid #e7f0f6;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 18px;
   box-shadow: var(--shadow);
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .25s, box-shadow .25s;
 }
-.service:hover { transform: translateY(-5px); box-shadow: 0 16px 38px rgba(2,62,138,.15); }
-.service-icon { width: 70px; height: 70px; object-fit: contain; }
-.service h3 { margin: 10px 0 6px; color: var(--deep-blue); font-size: 1.05rem; }
-.service p { margin: 0; color: var(--muted); font-size: .92rem; }
-.booking-section { padding: 25px 18px 55px; background: #e8f6fc; }
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 38px rgba(2,62,138,.15);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.service h3 {
+  margin: 10px 0 6px;
+  color: var(--deep-blue);
+  font-size: 1.05rem;
+}
+
+.service p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+/* =========================
+   7. الوجهات السياحية داخل مصر
+========================= */
+.destinations {
+  padding: 45px 6% 65px;
+  background: var(--section-bg);
+  transition: background .3s;
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1180px;
+  margin: 35px auto 0;
+}
+
+.destination-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--sky);
+  box-shadow: 0 18px 38px rgba(2,62,138,.18);
+}
+
+.destination-card img {
+  display: block;
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  transition: transform .45s;
+}
+
+.destination-card:hover img {
+  transform: scale(1.05);
+}
+
+.destination-info {
+  position: relative;
+  padding: 20px;
+  text-align: right;
+}
+
+.destination-info h3 {
+  margin: 0 0 8px;
+  color: var(--deep-blue);
+  font-size: 1.25rem;
+}
+
+.destination-info p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.destination-info a {
+  display: inline-block;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.destination-info a:hover {
+  color: var(--deep-blue);
+  text-decoration: underline;
+}
+
+/* =========================
+   8. الرسالة والرؤية والقيم
+========================= */
+.about-section {
+  padding: 60px 6%;
+  background: var(--light);
+  transition: background .3s;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  max-width: 1180px;
+  margin: 35px auto 0;
+}
+
+.about-card {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--sky), var(--blue), var(--deep-blue));
+}
+
+.about-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--sky);
+  box-shadow: 0 16px 35px rgba(2,62,138,.15);
+}
+
+.about-icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  font-size: 34px;
+}
+
+.about-card h3 {
+  margin: 0 0 12px;
+  color: var(--deep-blue);
+}
+
+.about-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 2;
+  font-size: .95rem;
+}
+
+/* =========================
+   9. نموذج الحجز
+========================= */
+.booking-section {
+  padding: 25px 18px 55px;
+  background: var(--section-bg);
+  transition: background .3s;
+}
+
 .booking-form {
   max-width: 620px;
   margin: 0 auto;
   padding: 30px;
-  background: white;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 18px;
   box-shadow: var(--shadow);
 }
-.booking-form h2 { margin: 0 0 16px; color: var(--deep-blue); }
-.booking-form input, .booking-form textarea {
+
+.booking-form h2 {
+  margin: 0 0 16px;
+  color: var(--deep-blue);
+}
+
+.booking-form input,
+.booking-form textarea {
   display: block;
   width: 100%;
   margin: 12px 0;
   padding: 13px 14px;
   border: 1px solid #ccdce7;
   border-radius: 10px;
-  background: #fbfdff;
+  background: var(--light);
   color: var(--text);
   font: inherit;
   outline: none;
+  transition: border-color .2s, box-shadow .2s;
 }
-.booking-form input:focus, .booking-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,119,182,.12); }
-.booking-form textarea { resize: vertical; }
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0,119,182,.12);
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
 .booking-form button {
   width: 100%;
   margin-top: 7px;
@@ -147,24 +464,225 @@ body {
   font: inherit;
   font-weight: 800;
   cursor: pointer;
+  transition: background .2s, transform .2s;
 }
-.booking-form button:hover { background: var(--deep-blue); }
-.form-note { margin-bottom: 0; color: var(--muted); font-size: .8rem; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-.site-footer { padding: 20px; text-align: center; color: white; background: var(--deep-blue); }
-.site-footer p { margin: 0; }
 
-html[dir="ltr"] .hero-content, html[dir="ltr"] .booking-form { text-align: left; }
-@media (max-width: 850px) {
-  .hero { grid-template-columns: 1fr; text-align: center; padding-top: 25px; }
-  .hero-content { margin: auto; }
-  .hero-image { max-height: 280px; grid-row: 1; }
-  .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.booking-form button:hover {
+  background: var(--deep-blue);
+  transform: translateY(-2px);
 }
+
+.form-note {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================
+   10. تذييل الموقع
+========================= */
+.site-footer {
+  padding: 25px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(120deg, var(--deep-blue), #01284e);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* =========================
+   11. اتجاه اللغة
+========================= */
+html[dir="ltr"] .hero-content,
+html[dir="ltr"] .booking-form {
+  text-align: left;
+}
+
+html[dir="ltr"] .destination-info {
+  text-align: left;
+}
+
+html[dir="ltr"] .about-card::before {
+  right: auto;
+  left: 0;
+}
+
+/* =========================
+   12. الوضع الداكن
+   يعمل عند إضافة class="dark" إلى body
+========================= */
+body.dark {
+  --light: #0b1220;
+  --text: #e5edf7;
+  --muted: #b2c0d0;
+  --white: #111c2d;
+  --card: #162235;
+  --border: #2b3c52;
+  --section-bg: #111d2e;
+  --shadow: 0 12px 32px rgba(0,0,0,.22);
+
+  background: var(--light);
+  color: var(--text);
+}
+
+body.dark .hero h1,
+body.dark .section-heading h2,
+body.dark .service h3,
+body.dark .booking-form h2,
+body.dark .destination-info h3,
+body.dark .about-card h3 {
+  color: #90d9ff;
+}
+
+body.dark .hero-content > p:not(.eyebrow),
+body.dark .service p,
+body.dark .destination-info p,
+body.dark .about-card p,
+body.dark .section-heading p {
+  color: #b9c8d9;
+}
+
+body.dark .eyebrow,
+body.dark .section-heading span {
+  color: #90e0ef;
+}
+
+body.dark .destinations,
+body.dark .about-section,
+body.dark .booking-section {
+  background: var(--section-bg);
+}
+
+body.dark .service,
+body.dark .destination-card,
+body.dark .about-card,
+body.dark .booking-form {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+body.dark .booking-form input,
+body.dark .booking-form textarea {
+  background: #0b1626;
+  color: #f1f5f9;
+  border-color: #3b4d64;
+}
+
+body.dark .destination-info a {
+  color: #90e0ef;
+}
+
+body.dark .about-icon {
+  background: #243950;
+}
+
+/* =========================
+   13. الشاشات المتوسطة
+========================= */
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  .hero-content {
+    margin: auto;
+  }
+
+  .hero-image {
+    max-height: 280px;
+    grid-row: 1;
+  }
+
+  .services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .destination-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   14. الهواتف
+========================= */
 @media (max-width: 520px) {
-  .site-header { padding: 76px 15px 18px; }
-  .lang-select { top: 12px; inset-inline-start: 12px; }
-  .main-nav a { padding: 9px 11px; font-size: .9rem; }
-  .services { grid-template-columns: 1fr; padding-inline: 18px; }
-  .booking-form { padding: 22px 17px; }
+  .site-header {
+    padding: 76px 15px 18px;
+  }
+
+  .lang-select {
+    top: 12px;
+    inset-inline-start: 12px;
+  }
+
+  .theme-toggle {
+    top: 12px;
+    inset-inline-end: 12px;
+    padding: 7px 9px;
+    font-size: .8rem;
+  }
+
+  .main-nav a {
+    padding: 9px 11px;
+    font-size: .9rem;
+  }
+
+  .hero {
+    margin-top: 10px;
+    padding: 20px 16px;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+    padding-inline: 18px;
+  }
+
+  .destinations,
+  .about-section {
+    padding: 35px 18px;
+  }
+
+  .destination-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .destination-card img {
+    height: 220px;
+  }
+
+  .booking-form {
+    padding: 22px 17px;
+  }
+}
+
+/* تقليل الحركة لمن يفضل ذلك */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
 }
