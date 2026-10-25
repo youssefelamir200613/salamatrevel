@@ -187,3 +187,63 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = `mailto:?subject=${subject}&body=${bodyText}`;
   });
 });
+
+const bookingForm = document.getElementById("bookingForm");
+const formMessage = document.getElementById("formMessage");
+
+if (bookingForm && formMessage) {
+  bookingForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    if (!bookingForm.checkValidity()) {
+      bookingForm.reportValidity();
+      return;
+    }
+
+    const submitButton = bookingForm.querySelector(
+      'button[type="submit"]'
+    );
+
+    const originalButtonText = submitButton
+      ? submitButton.innerHTML
+      : "";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "جاري إرسال طلبك...";
+    }
+
+    formMessage.textContent = "";
+
+    try {
+      const response = await fetch(bookingForm.action, {
+        method: "POST",
+        body: new FormData(bookingForm),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        formMessage.textContent =
+          "تم إرسال طلبك بنجاح! سنتواصل معك بعد مراجعة البيانات.";
+
+        bookingForm.reset();
+      } else {
+        const result = await response.json().catch(() => ({}));
+
+        formMessage.textContent =
+          result.errors?.map(error => error.message).join(" ") ||
+          "تعذر إرسال الطلب. تأكد من تفعيل نموذج Formspree وحاول مرة أخرى.";
+      }
+    } catch (error) {
+      formMessage.textContent =
+        "حدث خطأ في الاتصال. تحقق من الإنترنت وحاول مرة أخرى.";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
+      }
+    }
+  });
+}
