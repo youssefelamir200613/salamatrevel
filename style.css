@@ -686,3 +686,306 @@ body.dark .about-icon {
     animation-duration: .01ms !important;
   }
 }
+
+/* ==================================
+   SALAMA TRAVEL - ANIMATION PACK
+================================== */
+
+/* ألوان الحركة */
+:root {
+  --glow: rgba(0, 180, 216, 0.25);
+  --animation-speed: 0.35s;
+}
+
+/* حركة ظهور من الأسفل */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ظهور من الجانب */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* حركة عائمة */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* توهج خفيف */
+@keyframes softGlow {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(0, 119, 182, .10);
+  }
+  50% {
+    box-shadow: 0 12px 35px var(--glow);
+  }
+}
+
+/* خط متحرك */
+@keyframes shine {
+  from {
+    background-position: 200% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+/* الواجهة الرئيسية */
+.hero-content {
+  animation: slideIn .85s ease both;
+}
+
+.hero h1 {
+  background: linear-gradient(
+    90deg,
+    var(--deep-blue),
+    var(--blue),
+    #00b4d8,
+    var(--deep-blue)
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 7s linear infinite;
+}
+
+.hero-image {
+  border-radius: 24px;
+  animation: fadeUp 1s ease both, floating 5s ease-in-out 1s infinite;
+  transition: box-shadow .4s, border-radius .4s;
+}
+
+.hero-image:hover {
+  box-shadow: 0 20px 45px var(--glow);
+  border-radius: 35px 12px 35px 12px;
+}
+
+/* الأزرار */
+.hero-button,
+.booking-form button {
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s, background .3s;
+}
+
+.hero-button:hover,
+.booking-form button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px var(--glow);
+}
+
+/* تأثير لمعان على الزر */
+.hero-button::after,
+.booking-form button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255,255,255,.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left .6s;
+  pointer-events: none;
+}
+
+.hero-button:hover::after,
+.booking-form button:hover::after {
+  left: 150%;
+}
+
+/* كروت الخدمات */
+.service {
+  animation: fadeUp .7s ease both;
+  transition: transform .35s, box-shadow .35s, border-color .35s;
+}
+
+.service:hover {
+  transform: translateY(-9px) scale(1.02);
+  border-color: var(--blue);
+  box-shadow: 0 18px 35px var(--glow);
+}
+
+.service-icon {
+  transition: transform .4s;
+}
+
+.service:hover .service-icon {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+/* الوجهات السياحية */
+.destination-card {
+  transition: transform .4s, box-shadow .4s, border-color .4s;
+  animation: fadeUp .7s ease both;
+}
+
+.destination-card:nth-child(2) {
+  animation-delay: .1s;
+}
+
+.destination-card:nth-child(3) {
+  animation-delay: .2s;
+}
+
+.destination-card:nth-child(4) {
+  animation-delay: .3s;
+}
+
+.destination-card:nth-child(5) {
+  animation-delay: .4s;
+}
+
+.destination-card:nth-child(6) {
+  animation-delay: .5s;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  border-color: #00b4d8;
+  box-shadow: 0 22px 40px var(--glow);
+}
+
+.destination-card img {
+  transition: transform .65s cubic-bezier(.2,.7,.3,1);
+}
+
+.destination-card:hover img {
+  transform: scale(1.09);
+}
+
+.destination-info a {
+  transition: color .25s, letter-spacing .25s;
+}
+
+.destination-info a:hover {
+  letter-spacing: .4px;
+}
+
+/* الرسالة والرؤية والقيم */
+.about-card {
+  transition: transform .35s, box-shadow .35s;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 38px var(--glow);
+}
+
+.about-icon {
+  transition: transform .4s;
+}
+
+.about-card:hover .about-icon {
+  transform: translateY(-4px) rotate(6deg) scale(1.08);
+}
+
+/* عناوين الأقسام */
+.section-heading h2 {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+  width: 50%;
+  height: 3px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #00b4d8, var(--deep-blue));
+  transition: width .3s, right .3s;
+}
+
+.section-heading h2:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+/* حقول الحجز */
+.booking-form input,
+.booking-form textarea {
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(0, 119, 182, .12);
+}
+
+/* الوضع الداكن */
+body.dark .hero h1 {
+  background-image: linear-gradient(
+    90deg,
+    #90e0ef,
+    #48cae4,
+    #caf0f8,
+    #90e0ef
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+body.dark .destination-card:hover,
+body.dark .service:hover,
+body.dark .about-card:hover {
+  box-shadow: 0 18px 38px rgba(0, 180, 216, .12);
+}
+
+/* الموبايل */
+@media (max-width: 600px) {
+  .hero-image {
+    animation: fadeUp .8s ease both;
+  }
+
+  .destination-card:hover,
+  .service:hover,
+  .about-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* احترام إعداد تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
