@@ -149,19 +149,62 @@
           <div class="booking-points"><p><span>✓</span><span data-i18n="bookingPoint1">اختر الوجهة والموعد المناسب.</span></p><p><span>✓</span><span data-i18n="bookingPoint2">حدد عدد المسافرين ووسيلة التواصل.</span></p><p><span>✓</span><span data-i18n="bookingPoint3">راجع الرسالة قبل إرسالها.</span></p></div>
         </div>
         <form class="booking-form reveal" id="bookingForm">
-          <div class="form-heading"><h3 data-i18n="formTitle">طلب حجز رحلة</h3><p data-i18n="formSubtitle">كل الحقول المميزة بنجمة مطلوبة</p></div>
-          <div class="form-grid">
-            <div class="form-field"><label for="fullName" data-i18n="labelName">الاسم الكامل *</label><input id="fullName" name="fullName" autocomplete="name" required placeholder="اكتب اسمك"></div>
-            <div class="form-field"><label for="email" data-i18n="labelEmail">البريد الإلكتروني *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.com"></div>
-            <div class="form-field"><label for="destination" data-i18n="labelDestination">الوجهة *</label><select id="destination" name="destination" required><option value="" data-i18n="chooseDestination">اختر الوجهة</option><option>شرم الشيخ</option><option>الغردقة</option><option>الأقصر وأسوان</option><option>واحة سيوة</option><option>الإسكندرية</option><option>القاهرة والجيزة</option><option data-i18n="otherDestination">وجهة أخرى داخل مصر</option></select></div>
-            <div class="form-field"><label for="tripDate" data-i18n="labelDate">التاريخ المفضل</label><input id="tripDate" name="tripDate" type="date"></div>
-            <div class="form-field"><label for="travelers" data-i18n="labelTravelers">عدد المسافرين</label><select id="travelers" name="travelers"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6+">6+</option></select></div>
-            <div class="form-field"><label for="phone" data-i18n="labelPhone">رقم الهاتف (اختياري)</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="01xxxxxxxxx"></div>
-            <div class="form-field form-field-wide"><label for="notes" data-i18n="labelNotes">تفاصيل إضافية</label><textarea id="notes" name="notes" rows="4" placeholder="اكتب أي تفاصيل تساعدنا في فهم طلبك"></textarea></div>
-          </div>
-          <button class="button button-primary submit-button" type="submit" data-i18n="submitBtn">تجهيز رسالة الحجز <span>↗</span></button>
-          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
-          <p class="form-disclaimer" data-i18n="formDisclaimer">ملاحظة: هذا النموذج يجهز رسالة بريد إلكتروني ولا يؤكد الحجز تلقائيًا.</p>
+        
+<section class="contact-section" id="contact">
+  <h2>تواصل مع سلامة ترافيل</h2>
+  <p>عندك استفسار عن رحلة؟ ابعتلنا رسالتك!</p>
+
+  <form
+    action="https://formspree.io/f/xgaoqbly"
+    method="POST"
+    class="contact-form"
+  >
+    <label for="name">الاسم بالكامل</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="اكتب اسمك"
+      required
+    >
+
+    <label for="email">البريد الإلكتروني</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="example@gmail.com"
+      required
+    >
+
+    <label for="subject">موضوع الرسالة</label>
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+      placeholder="استفسار عن رحلة"
+      required
+    >
+
+    <label for="message">رسالتك</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      placeholder="اكتب رسالتك هنا..."
+      required
+    ></textarea>
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="رسالة جديدة من موقع سلامة ترافيل"
+    >
+
+    <button type="submit">إرسال الرسالة</button>
+  </form>
+</section>
+
         </form>
       </div>
     </section>
