@@ -186,9 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formMessage.textContent = dict.msgReady;
     window.location.href = `mailto:?subject=${subject}&body=${bodyText}`;
   });
-});
-
-const bookingForm = document.getElementById("bookingForm");
+  const bookingForm = document.getElementById("bookingForm");
 const formMessage = document.getElementById("formMessage");
 
 if (bookingForm && formMessage) {
@@ -247,3 +245,6 @@ if (bookingForm && formMessage) {
     }
   });
 }
+
+});
+
