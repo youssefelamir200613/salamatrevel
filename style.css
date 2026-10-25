@@ -271,3 +271,58 @@ html[dir="ltr"] .text-link:hover span { transform: translateX(5px); }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+.contact-section {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  direction: rtl;
+  font-family: Arial, sans-serif;
+  text-align: right;
+}
+
+.contact-section h2 {
+  color: #023e8a;
+  text-align: center;
+}
+
+.contact-section p {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #023e8a;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.contact-form button {
+  padding: 14px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  background: #023e8a;
+}
+
