@@ -553,6 +553,36 @@
     setLanguage("ar");
   </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(
+    ".service, .destination-card, .about-card"
+  );
+
+  // إيقاف تأثير الظهور إذا كان المستخدم يفضل تقليل الحركة
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  // تفعيل الظهور عند دخول العنصر إلى الشاشة
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  elements.forEach((element) => {
+    element.classList.add("reveal");
+    observer.observe(element);
+  });
+});
+</script>
+
 </body>
 </html>
 ```
