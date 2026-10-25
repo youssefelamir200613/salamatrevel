@@ -148,7 +148,17 @@
           <p data-i18n="bookingText">املأ البيانات التالية وسيفتح لك برنامج البريد رسالة جاهزة بطلبك. لا يتم إرسال البيانات تلقائيًا من الموقع.</p>
           <div class="booking-points"><p><span>✓</span><span data-i18n="bookingPoint1">اختر الوجهة والموعد المناسب.</span></p><p><span>✓</span><span data-i18n="bookingPoint2">حدد عدد المسافرين ووسيلة التواصل.</span></p><p><span>✓</span><span data-i18n="bookingPoint3">راجع الرسالة قبل إرسالها.</span></p></div>
         </div>
-        <form class="booking-form reveal" id="bookingForm">
+        <<form
+  class="booking-form reveal"
+  id="bookingForm"
+  action="https://formspree.io/f/xgaoqbly"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="_subject"
+    value="طلب حجز جديد - سلامة ترافيل"
+  >
           <div class="form-heading"><h3 data-i18n="formTitle">طلب حجز رحلة</h3><p data-i18n="formSubtitle">كل الحقول المميزة بنجمة مطلوبة</p></div>
           <div class="form-grid">
             <div class="form-field"><label for="fullName" data-i18n="labelName">الاسم الكامل *</label><input id="fullName" name="fullName" autocomplete="name" required placeholder="اكتب اسمك"></div>
