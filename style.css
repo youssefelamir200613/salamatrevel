@@ -6,3 +6,55 @@ html[dir="ltr"] body{font-family:'Inter','Cairo',Arial,sans-serif}html[dir="ltr"
 @media(max-width:1100px){.site-header{padding-inline:4%}.nav{gap:13px;font-size:12px}.trip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-inline:6%}}
 @media(max-width:800px){.site-header{padding:10px 5%;flex-wrap:wrap;min-height:72px}.header-actions{margin-inline-start:auto}.language-label{display:none}.menu-toggle{display:block}.nav{display:none;position:absolute;top:100%;right:0;left:0;background:var(--card);padding:19px 6%;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:12px;border-bottom:1px solid var(--line)}html[dir="ltr"] .nav{right:0;left:0}.nav.open{display:flex}.nav-cta{text-align:center}.hero{grid-template-columns:1fr;padding:48px 7% 42px;gap:30px}.hero h1{font-size:46px}.hero-art{height:300px;max-width:520px;width:100%;margin:auto}.trust-row{gap:12px}.section{padding:62px 7%}.service-grid{grid-template-columns:1fr;gap:13px}.service-card{padding:23px}.about{grid-template-columns:1fr;gap:42px}.about-stamp{width:210px;margin:auto;font-size:27px}.about-stamp span{font-size:15px}.contact-section{grid-template-columns:1fr;gap:27px}.contact-form{padding:23px}.footer{padding:24px 6%;flex-wrap:wrap}.footer>p{order:3;width:100%;margin:0}.copyright{margin-inline-start:auto}}
 @media(max-width:450px){.brand strong{font-size:15px}.brand-mark{width:38px;height:38px}.language-select{max-width:92px;padding:7px 5px}.hero h1{font-size:38px}.hero-art{height:250px}.destination-card{bottom:63px;inset-inline-end:5%;transform:scale(.88);transform-origin:bottom right}.trip-grid{grid-template-columns:1fr}.trip-visual{height:165px}.trip-body p{min-height:0}.form-row{grid-template-columns:1fr;gap:0}.section-heading h2,.about h2,.contact-intro h2{font-size:29px}.hero-actions{gap:16px}.trust-row{font-size:10px}.footer-brand strong{font-size:15px}}
+
+/* زر واتساب العائم */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  color: #fff;
+}
+
+.whatsapp-icon {
+  font-size: 25px;
+  line-height: 1;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% {
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.25);
+  }
+  50% {
+    box-shadow: 0 5px 25px rgba(37, 211, 102, 0.6);
+  }
+}
+
+/* مناسب للموبايل */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    bottom: 15px;
+    left: 12px;
+    padding: 11px 15px;
+    font-size: 13px;
+  }
+}
+
