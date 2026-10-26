@@ -1,75 +1,94 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="سلامة ترافيل — خطط رحلتك القادمة بسهولة. أرسل استفسارك وسنتواصل معك.">
-  <title>سلامة ترافيل | رحلتك تبدأ هنا</title>
+  <meta name="description" content="سلامة ترافيل — رحلات سياحية داخل مصر وخطط سفر تناسبك.">
+  <meta name="theme-color" content="#f8fbf9">
+  <title>سلامة ترافيل | اكتشف مصر</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="سلامة ترافيل - الرئيسية">
+    <a class="brand" href="#home" aria-label="Salama Travel home">
       <span class="brand-mark">✈</span>
-      <span><strong>سلامة ترافيل</strong><small>رحلتك تبدأ هنا</small></span>
+      <span><strong data-i18n="brand">سلامة ترافيل</strong><small data-i18n="tagline">رحلتك تبدأ هنا</small></span>
     </a>
-    <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    <div class="header-actions">
+      <label class="language-label" for="languageSelect" data-i18n="languageLabel">اللغة</label>
+      <select id="languageSelect" class="language-select" aria-label="Language">
+        <option value="ar">العربية</option><option value="en">English</option><option value="ru">Русский</option>
+      </select>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="تبديل الوضع" title="تبديل الوضع"><span id="themeIcon">☾</span></button>
+      <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    </div>
     <nav class="nav" aria-label="القائمة الرئيسية">
-      <a href="#home">الرئيسية</a><a href="#services">خدماتنا</a><a href="#about">من نحن</a><a href="#contact" class="nav-cta">تواصل معنا</a>
+      <a href="#home" data-i18n="navHome">الرئيسية</a><a href="#trips" data-i18n="navTrips">رحلات داخل مصر</a><a href="#services" data-i18n="navServices">خدماتنا</a><a href="#about" data-i18n="navAbout">من نحن</a><a href="#contact" class="nav-cta" data-i18n="navContact">تواصل معنا</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-content">
-        <p class="eyebrow">اكتشف العالم مع سلامة ترافيل</p>
-        <h1>رحلتك القادمة<br><span>تبدأ بخطوة.</span></h1>
-        <p class="hero-copy">نساعدك على ترتيب خطط سفرك بسهولة، من أول استفسار وحتى تجهيز تفاصيل رحلتك.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#contact">أرسل استفسارك <span>←</span></a><a class="text-link" href="#services">اكتشف خدماتنا ↓</a></div>
-        <div class="trust-row"><span>✓ تواصل سهل</span><span>✓ خطط تناسبك</span><span>✓ اهتمام بالتفاصيل</span></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow" data-i18n="heroEyebrow">اكتشف سحر مصر مع سلامة ترافيل</p>
+        <h1 data-i18n="heroTitle">مصر تناديك،<br><span>والحكاية تبدأ هنا.</span></h1>
+        <p class="hero-copy" data-i18n="heroCopy">من شواطئ البحر الأحمر إلى أسرار الحضارة القديمة، خطط لرحلتك القادمة معنا بسهولة.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#trips"><span data-i18n="exploreTrips">اكتشف الرحلات</span><span>←</span></a><a class="text-link" href="#contact" data-i18n="sendInquiry">أرسل استفسارك ↓</a></div>
+        <div class="trust-row"><span data-i18n="trust1">✓ وجهات مصرية مميزة</span><span data-i18n="trust2">✓ خطط تناسبك</span><span data-i18n="trust3">✓ تواصل سهل</span></div>
       </div>
-      <div class="hero-art" aria-label="رسم توضيحي للسفر" role="img">
+      <div class="hero-art animated-art" aria-label="تصميم سياحي مستوحى من مصر" role="img">
         <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="plane">✈</div>
-        <div class="destination-card"><span class="pin">⌖</span><div><b>وجهتك التالية</b><small>لنخطط لها معًا</small></div><span class="sparkle">✦</span></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="plane">✈</div>
+        <div class="pyramid pyramid-one"></div><div class="pyramid pyramid-two"></div>
+        <div class="destination-card"><span class="pin">⌖</span><div><b data-i18n="nextDestination">وجهتك التالية</b><small data-i18n="planTogether">لنخطط لها معًا</small></div><span class="sparkle">✦</span></div>
         <div class="wave wave-back"></div><div class="wave wave-front"></div>
       </div>
     </section>
 
+    <section class="trips section" id="trips">
+      <div class="section-heading reveal"><p class="eyebrow" data-i18n="tripsEyebrow">رحلات سياحية داخل مصر</p><h2 data-i18n="tripsTitle">كل مدينة لها <span>حكاية</span></h2><p data-i18n="tripsIntro">اختر الأجواء التي تحبها، وأرسل لنا استفسارك لمعرفة تفاصيل الرحلة المتاحة.</p></div>
+      <div class="trip-grid">
+        <article class="trip-card reveal"><div class="trip-visual sea"><span class="trip-symbol">🌊</span><span class="trip-tag" data-i18n="tripSeaTag">بحر واسترخاء</span></div><div class="trip-body"><h3 data-i18n="tripHurghada">الغردقة والبحر الأحمر</h3><p data-i18n="tripHurghadaDesc">شواطئ خلابة، أنشطة بحرية، وأوقات للاسترخاء تحت الشمس.</p><button class="trip-link" type="button" data-trip="hurghada" data-i18n="askTrip">استفسر عن الرحلة ←</button></div></article>
+        <article class="trip-card reveal"><div class="trip-visual history"><span class="trip-symbol">𓂀</span><span class="trip-tag" data-i18n="tripHistoryTag">تاريخ وحضارة</span></div><div class="trip-body"><h3 data-i18n="tripLuxor">الأقصر وأسوان</h3><p data-i18n="tripLuxorDesc">اكتشف المعابد والآثار والنيل في رحلة بين صفحات التاريخ.</p><button class="trip-link" type="button" data-trip="luxor" data-i18n="askTrip">استفسر عن الرحلة ←</button></div></article>
+        <article class="trip-card reveal"><div class="trip-visual cairo"><span class="trip-symbol">△</span><span class="trip-tag" data-i18n="tripCultureTag">ثقافة ومغامرة</span></div><div class="trip-body"><h3 data-i18n="tripCairo">القاهرة والأهرامات</h3><p data-i18n="tripCairoDesc">معالم شهيرة، متاحف، وأسواق نابضة بالحياة في العاصمة.</p><button class="trip-link" type="button" data-trip="cairo" data-i18n="askTrip">استفسر عن الرحلة ←</button></div></article>
+        <article class="trip-card reveal"><div class="trip-visual sinai"><span class="trip-symbol">⛰</span><span class="trip-tag" data-i18n="tripNatureTag">طبيعة ومغامرة</span></div><div class="trip-body"><h3 data-i18n="tripSinai">دهب وشرم الشيخ</h3><p data-i18n="tripSinaiDesc">مياه صافية، مناظر جبلية، وتجارب متنوعة لمحبي الطبيعة.</p><button class="trip-link" type="button" data-trip="sinai" data-i18n="askTrip">استفسر عن الرحلة ←</button></div></article>
+      </div>
+      <p class="trips-note" data-i18n="tripsNote">الوجهات المعروضة أمثلة إرشادية؛ المواعيد والأسعار والتوافر تُؤكَّد عند التواصل.</p>
+    </section>
+
     <section class="services section" id="services">
-      <div class="section-heading"><p class="eyebrow">كيف نساعدك؟</p><h2>كل تفاصيل رحلتك، <span>في مكان واحد</span></h2><p>ابدأ بإخبارنا بما تحتاجه، وسنتواصل معك لمناقشة الخيارات المناسبة.</p></div>
+      <div class="section-heading reveal"><p class="eyebrow" data-i18n="servicesEyebrow">كيف نساعدك؟</p><h2 data-i18n="servicesTitle">خطط رحلتك <span>بسهولة</span></h2><p data-i18n="servicesIntro">ابدأ بإخبارنا بما تحتاجه، وسنتواصل معك لمناقشة الخيارات المناسبة.</p></div>
       <div class="service-grid">
-        <article class="service-card"><span class="service-icon">✈</span><h3>حجوزات الطيران</h3><p>استفسر عن خيارات الرحلات ومواعيد السفر المناسبة لك.</p></article>
-        <article class="service-card"><span class="service-icon">⌂</span><h3>الإقامة والفنادق</h3><p>شاركنا وجهتك وتفضيلاتك لنساعدك في التخطيط للإقامة.</p></article>
-        <article class="service-card"><span class="service-icon">◎</span><h3>تنظيم الرحلات</h3><p>رتّب أفكارك وخطط لرحلتك القادمة بخطوات واضحة.</p></article>
+        <article class="service-card reveal"><span class="service-icon">✈</span><h3 data-i18n="serviceFlights">حجوزات الطيران</h3><p data-i18n="serviceFlightsDesc">استفسر عن خيارات الرحلات ومواعيد السفر المناسبة لك.</p></article>
+        <article class="service-card reveal"><span class="service-icon">⌂</span><h3 data-i18n="serviceStay">الإقامة والفنادق</h3><p data-i18n="serviceStayDesc">شاركنا وجهتك وتفضيلاتك لنساعدك في التخطيط للإقامة.</p></article>
+        <article class="service-card reveal"><span class="service-icon">◎</span><h3 data-i18n="servicePlans">تنظيم الرحلات</h3><p data-i18n="servicePlansDesc">رتّب أفكارك وخطط لرحلتك القادمة بخطوات واضحة.</p></article>
       </div>
     </section>
 
     <section class="about section" id="about">
-      <div class="about-stamp">SALAMA<br><span>TRAVEL</span></div>
-      <div><p class="eyebrow">أهلًا بك في سلامة ترافيل</p><h2>نبدأ بالاستماع<br>إلى <span>خططك.</span></h2><p>نؤمن أن التخطيط الجيد يبدأ بتواصل واضح. أرسل لنا تفاصيل استفسارك، وسنراجع رسالتك ونتواصل معك عبر بيانات الاتصال التي تتركها.</p><a class="text-link" href="#contact">تواصل مع فريقنا ←</a></div>
+      <div class="about-stamp reveal">SALAMA<br><span>TRAVEL</span></div>
+      <div class="reveal"><p class="eyebrow" data-i18n="aboutEyebrow">أهلًا بك في سلامة ترافيل</p><h2 data-i18n="aboutTitle">نبدأ بالاستماع<br>إلى <span>خططك.</span></h2><p data-i18n="aboutCopy">نؤمن أن التخطيط الجيد يبدأ بتواصل واضح. أرسل لنا تفاصيل استفسارك، وسنراجع رسالتك ونتواصل معك عبر بيانات الاتصال التي تتركها.</p><a class="text-link" href="#contact" data-i18n="contactTeam">تواصل مع فريقنا ←</a></div>
     </section>
 
     <section class="contact-section section" id="contact">
-      <div class="contact-intro"><p class="eyebrow">خلّينا نخطط سوا</p><h2>أرسل لنا <span>رسالتك</span></h2><p>املأ النموذج التالي وسنستقبل رسالتك عبر خدمة Formspree.</p>
-        <div class="contact-note"><span>✉</span><div><b>تواصل مباشر</b><small>اكتب استفسارك بالتفاصيل التي تود مشاركتها.</small></div></div>
-        <div class="contact-note"><span>◷</span><div><b>كل ما نحتاجه هو البداية</b><small>سنستخدم بياناتك للرد على استفسارك فقط.</small></div></div>
+      <div class="contact-intro reveal"><p class="eyebrow" data-i18n="contactEyebrow">خلّينا نخطط سوا</p><h2 data-i18n="contactTitle">أرسل لنا <span>رسالتك</span></h2><p data-i18n="contactIntro">املأ النموذج التالي وسنستقبل رسالتك عبر خدمة Formspree.</p>
+        <div class="contact-note"><span>✉</span><div><b data-i18n="directContact">تواصل مباشر</b><small data-i18n="directContactDesc">اكتب استفسارك بالتفاصيل التي تود مشاركتها.</small></div></div>
+        <div class="contact-note"><span>◷</span><div><b data-i18n="privacyTitle">نهتم بخصوصيتك</b><small data-i18n="privacyDesc">سنستخدم بياناتك للرد على استفسارك فقط.</small></div></div>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/xgaoqbly" method="POST">
+      <form class="contact-form reveal" action="https://formspree.io/f/xgaoqbly" method="POST">
         <input type="hidden" name="_subject" value="رسالة جديدة من موقع سلامة ترافيل">
-        <label for="name">الاسم بالكامل</label><input id="name" name="name" type="text" placeholder="اكتب اسمك" autocomplete="name" required>
-        <div class="form-row"><div><label for="email">البريد الإلكتروني</label><input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required></div><div><label for="phone">رقم الهاتف (اختياري)</label><input id="phone" name="phone" type="tel" placeholder="رقم للتواصل" autocomplete="tel"></div></div>
-        <label for="topic">نوع الاستفسار</label><select id="topic" name="topic" required><option value="" disabled selected>اختر نوع الاستفسار</option><option>حجز طيران</option><option>فندق وإقامة</option><option>تنظيم رحلة</option><option>استفسار عام</option></select>
-        <label for="message">رسالتك</label><textarea id="message" name="message" rows="5" placeholder="اكتب تفاصيل استفسارك هنا..." required></textarea>
-        <label class="consent"><input type="checkbox" required><span>أوافق على استخدام بياناتي للرد على هذا الاستفسار.</span></label>
-        <button class="button button-primary submit-button" type="submit">إرسال الرسالة <span>←</span></button>
-        <p class="form-footnote">لن يتم إرسال الرسالة إلا بعد الضغط على زر الإرسال.</p>
+        <label for="name" data-i18n="labelName">الاسم بالكامل</label><input id="name" name="name" type="text" placeholder="اكتب اسمك" autocomplete="name" required data-i18n-placeholder="placeholderName">
+        <div class="form-row"><div><label for="email" data-i18n="labelEmail">البريد الإلكتروني</label><input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required></div><div><label for="phone" data-i18n="labelPhone">رقم الهاتف (اختياري)</label><input id="phone" name="phone" type="tel" placeholder="رقم للتواصل" autocomplete="tel" data-i18n-placeholder="placeholderPhone"></div></div>
+        <label for="topic" data-i18n="labelTopic">نوع الاستفسار</label><select id="topic" name="topic" required><option value="" disabled selected data-i18n="selectTopic">اختر نوع الاستفسار</option><option value="رحلات داخل مصر" data-i18n="topicDomestic">رحلات سياحية داخل مصر</option><option value="حجز طيران" data-i18n="topicFlights">حجز طيران</option><option value="فندق وإقامة" data-i18n="topicStay">فندق وإقامة</option><option value="تنظيم رحلة" data-i18n="topicPlan">تنظيم رحلة</option><option value="استفسار عام" data-i18n="topicGeneral">استفسار عام</option></select>
+        <label for="message" data-i18n="labelMessage">رسالتك</label><textarea id="message" name="message" rows="5" placeholder="اكتب تفاصيل استفسارك هنا..." required data-i18n-placeholder="placeholderMessage"></textarea>
+        <label class="consent"><input type="checkbox" required><span data-i18n="consent">أوافق على استخدام بياناتي للرد على هذا الاستفسار.</span></label>
+        <button class="button button-primary submit-button" type="submit"><span data-i18n="submit">إرسال الرسالة</span><span>←</span></button>
+        <p class="form-footnote" data-i18n="formFootnote">لن يتم إرسال الرسالة إلا بعد الضغط على زر الإرسال.</p>
       </form>
     </section>
   </main>
 
-  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">✈</span><span><strong>سلامة ترافيل</strong><small>رحلتك تبدأ هنا</small></span></a><p>نحوّل خطط السفر إلى خطوات أسهل.</p><span class="copyright">© <span id="year"></span> سلامة ترافيل</span></footer>
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">✈</span><span><strong data-i18n="brand">سلامة ترافيل</strong><small data-i18n="tagline">رحلتك تبدأ هنا</small></span></a><p data-i18n="footerLine">نحوّل خطط السفر إلى خطوات أسهل.</p><span class="copyright">© <span id="year"></span> <span data-i18n="brand">سلامة ترافيل</span></span></footer>
   <script src="script.js"></script>
 </body>
 </html>
